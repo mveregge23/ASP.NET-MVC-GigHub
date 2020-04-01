@@ -39,3 +39,30 @@
         </li>
     }
 </ul>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $(".js-toggle-attendance").click(function(e) {
+                var button = $(e.target);
+                $.post("/api/attendances", { gigId: button.attr("data-gig-id") })
+                    .done(function() {
+                        button.removeClass("btn-default")
+                            .addClass("btn-info")
+                            .text("Going");
+                    }).fail(function() {
+                        alert("Something failed!");
+                    });
+            });
+            $(".js-toggle-follow").click(function(e) {
+                var button = $(e.target);
+                $.post("api/follows", { ArtistId: button.attr("data-artist-id") }).done(function() {
+                    button.removeClass("btn-default").addClass("btn-info").text("Following");
+                }).fail(function() {
+                    alert("Something failed!");
+                });
+            });
+        });
+    </script>
+}

@@ -206,6 +206,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\api\AttendancesController.cs" />
+    <Compile Include="Controllers\api\FollowingsController.cs" />
+    <Compile Include="Controllers\api\GigsController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -213,8 +216,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AttendancesController.cs" />
-    <Compile Include="Controllers\FollowingsController.cs" />
     <Compile Include="Controllers\FollowsController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -260,6 +261,10 @@
     <Compile Include="Migrations\202003241220454_AddAttednace1.Designer.cs">
       <DependentUpon>202003241220454_AddAttednace1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003302354160_AddIsCanceledToGig.cs" />
+    <Compile Include="Migrations\202003302354160_AddIsCanceledToGig.Designer.cs">
+      <DependentUpon>202003302354160_AddIsCanceledToGig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Attendance.cs" />
@@ -293,6 +298,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -344,7 +350,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Gigs\Create.cshtml" />
+    <Content Include="Views\Gigs\GigForm.cshtml" />
     <Content Include="Views\Gigs\Attending.cshtml" />
     <Content Include="Views\Followings\Index.cshtml" />
     <Content Include="Views\Gigs\MyUpcomingGigs.cshtml" />
@@ -388,6 +394,9 @@
     <EmbeddedResource Include="Migrations\202003241220454_AddAttednace1.resx">
       <DependentUpon>202003241220454_AddAttednace1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003302354160_AddIsCanceledToGig.resx">
+      <DependentUpon>202003302354160_AddIsCanceledToGig.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -407,7 +416,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52970</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52970/</IISUrl>
+          <IISUrl>http://localhost:52971/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
