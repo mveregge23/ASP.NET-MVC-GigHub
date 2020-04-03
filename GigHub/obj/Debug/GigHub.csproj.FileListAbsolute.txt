@@ -97,3 +97,4 @@ C:\Users\Max\source\repos\GigHub\GigHub\GigHub\GigHub\bin\System.Web.Http.WebHos
 C:\Users\Max\source\repos\GigHub\GigHub\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddFollow.resources
 C:\Users\Max\source\repos\GigHub\GigHub\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddAttednace1.resources
 C:\Users\Max\source\repos\GigHub\GigHub\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddIsCanceledToGig.resources
+C:\Users\Max\source\repos\GigHub\GigHub\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddNotification.resources

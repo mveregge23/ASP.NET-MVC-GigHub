@@ -17,11 +17,13 @@ namespace GigHub.Models
 
         public ICollection<Follow> Followers { get; set; }
         public ICollection<Follow> Followings { get; set; }
+        public ICollection<UserNotification> UserNotifications { get; set; }
 
         public ApplicationUser()
         {
             Followers = new Collection<Follow>();
             Followings = new Collection<Follow>();
+            UserNotifications = new Collection<UserNotification>();
         }
 
 
@@ -31,6 +33,14 @@ namespace GigHub.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
             return userIdentity;
+        }
+
+        public void Notify(Notification notification)
+        {
+
+            var userNotification = new UserNotification(this, notification);
+
+            UserNotifications.Add(userNotification);
         }
     }
 }
