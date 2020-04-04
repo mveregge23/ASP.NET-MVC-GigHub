@@ -98,3 +98,5 @@ C:\Users\Max\source\repos\GigHub\GigHub\GigHub\GigHub\obj\Debug\GigHub.Migration
 C:\Users\Max\source\repos\GigHub\GigHub\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddAttednace1.resources
 C:\Users\Max\source\repos\GigHub\GigHub\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddIsCanceledToGig.resources
 C:\Users\Max\source\repos\GigHub\GigHub\GigHub\GigHub\obj\Debug\GigHub.Migrations.AddNotification.resources
+C:\Users\Max\source\repos\GigHub\GigHub\GigHub\GigHub\bin\AutoMapper.dll
+C:\Users\Max\source\repos\GigHub\GigHub\GigHub\GigHub\bin\AutoMapper.xml
