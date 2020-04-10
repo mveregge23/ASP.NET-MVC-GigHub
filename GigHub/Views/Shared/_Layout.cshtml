@@ -37,15 +37,14 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/lib")
+@RenderSection("scripts", required: false)
 <script type="text/x-template" id="notifications-template">
-    <ul>
+    <ul class="notifications">
         <%
             _.each(notifications, function(notification) {
                 if(notification.type === 1) { %>
-                    <li><%= notification.gig.artist.name %> has cancelled the gig at <%= notification.gig.venue %> at <%= notification.gig.dateTime %>.</li> 
+                    <li><span class="highlight"><%= notification.gig.artist.name %></span> has cancelled the gig at <%= notification.gig.venue %> at <%= moment(notification.gig.dateTime).format("D MMM HH:mm") %>.</li> 
                 <% }
 
                 else if(notification.type === 2) { 
@@ -62,16 +61,16 @@
         
                     if (notification.originalDateTime != notification.gig.dateTime) {
                         changes.push("date/time");
-                        originalValues.push(notification.originalDateTime);
-                        newValues.push(notification.gig.dateTime);
+                        originalValues.push(moment(notification.originalDateTime).format("D MMM HH:mm"));
+                        newValues.push(moment(notification.gig.dateTime).format("D MMM HH:mm"));
                     }
                 %>
-                    <li><%= notification.gig.artist.name %> has changed the <%= changes.join(' and ') %> of a gig from <%= originalValues.join(" and ") %> to <%= newValues.join(" and ") %>.</li>
+                    <li><span class="highlight"><%= notification.gig.artist.name %></span> has changed the <%= changes.join(' and ') %> of a gig from <%= originalValues.join(" and ") %> to <%= newValues.join(" and ") %>.</li>
                 <% 
                 }
         
                 if(notification.type === 3) { %>
-                    <li><%= notification.gig.artist.name %> has added a gig at <%= notification.gig.venue %> at <%= notification.gig.dateTime %>.</li>
+                    <li><span class="highlight"><%= notification.gig.artist.name %></span> has added a gig at <%= notification.gig.venue %> at <%= notification.gig.dateTime %>.</li>
                 <% }
             })
         %>
@@ -96,7 +95,8 @@
                         var html = compiled({ notifications: notifications });
                         return html;
                     },
-                    placement: "bottom"
+                    placement: "bottom",
+                    template: '<div class="popover popover-notifications" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
                 });
             });
 
